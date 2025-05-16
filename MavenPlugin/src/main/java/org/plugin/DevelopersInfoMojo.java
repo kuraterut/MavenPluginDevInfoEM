@@ -1,5 +1,6 @@
 package org.plugin;
 
+import com.google.j2objc.annotations.Property;
 import org.apache.maven.model.Developer;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -10,7 +11,9 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Properties;
 
 @Mojo(name = "info")
 public class DevelopersInfoMojo extends AbstractMojo {
@@ -53,6 +56,13 @@ public class DevelopersInfoMojo extends AbstractMojo {
             }
             if (StringUtils.isNotEmpty(developer.getTimezone())) {
                 getLog().info(String.format("  Timezone: %s", developer.getTimezone()));
+            }
+            if (!Objects.isNull(developer.getProperties()) && !developer.getProperties().isEmpty()) {
+                getLog().info("  Properties: ");
+                Properties properties = developer.getProperties();
+                for(String propKey : developer.getProperties().stringPropertyNames()){
+                    getLog().info(String.format("  %s: %s", propKey, properties.get(propKey)));
+                }
             }
             getLog().info("--------------------------------");
         }

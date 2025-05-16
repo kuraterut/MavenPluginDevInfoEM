@@ -23,6 +23,10 @@
             <roles>
                 <role>Developer</role>
             </roles>
+            <properties>
+                <telegram>@kuraterut</telegram>
+                <office.location>Moscow</office.location>
+            </properties>
         </developer>
         <developer>
             <id>dev2</id>
@@ -33,6 +37,10 @@
                 <role>Developer</role>
                 <role>Tester</role>
             </roles>
+            <properties>
+                <telegram>@numurovA</telegram>
+                <office.location>Moscow</office.location>
+            </properties>
         </developer>
     </developers>
 
