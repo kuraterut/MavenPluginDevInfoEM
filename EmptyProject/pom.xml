@@ -14,4 +14,55 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <developers>
+        <developer>
+            <id>dev1</id>
+            <name>Kurylin Ilia</name>
+            <email>kuraterut@yandex.ru</email>
+            <organization>Effective Mobile</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <properties>
+                <telegram>@kuraterut</telegram>
+                <office.location>Moscow</office.location>
+            </properties>
+        </developer>
+        <developer>
+            <id>dev2</id>
+            <name>Nemurov Artem</name>
+            <email>anemurov@yandex.ru</email>
+            <organization>Effective Mobile</organization>
+            <roles>
+                <role>Developer</role>
+                <role>Tester</role>
+            </roles>
+            <properties>
+                <telegram>@numurovA</telegram>
+                <office.location>Moscow</office.location>
+            </properties>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.plugin</groupId>
+                <artifactId>MavenPluginDevInfo</artifactId>
+                <version>1.0-SNAPSHOT</version>
+
+
+                <executions>
+                    <execution>
+                        <id>show-developers-info</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
